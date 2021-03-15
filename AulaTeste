@@ -1,0 +1,102 @@
+---
+title: "PTE-3121 - Planejamento e Análise de Pesquisas Longitudinais"
+author: "Professora Alinne Veiga"
+date: "2020 - Primeiro trimestre"
+subtitle: Aula 2 - Análise Exploratória de Dados Longitudinais
+
+
+output:
+  bookdown::gitbook: default
+documentclass: book
+
+
+---
+
+
+# Panorama da Aula  
+* Organização do banco de dados longitudinal
+* Características do banco de dados longitudinal
+* Relações longitudinais vs corte-transversal
+* Tempo
+* Não resposta
+* Notação 
+* Análise gráfica
+* Exemplos
+* Estrutura de correlação
+* Em resumo
+* Referências e lista de leitura 
+ 
+
+# Análise Exploratória de Dados Longitudinais
+
+*  Assim como em dados de corte-transversal pesquisadores devem realizar análise exploratória dos dados longitudinais 
+
+* Revela:
+    * Padrões dos dados, formas funcionais e sujeitos específicos 
+    * Como o padrão de mudança ao longo do tempo difere entre unidades?
+    * Como cada unidade muda ao longo do tempo?
+
+*  Estratégias numéricas e gráficas 
+
+*  Mais complexa do que para dados transversais
+
+> > Como armazenar os seus dados?
+
+# Organizando o banco de dados longitudinal
+
+* Num formato que seja adequado para o que se queira investigar
+
+*  Duas formas básicas:
+    * Nível pessoa: o número de linhas reflete o número de indivíduos; conforme se coletam novas ondas de dados, o banco de dados ganha variáveis e não registros --  FORMATO LARGO
+
+    * Pessoa-período: o número de linhas reflete a quantidade de combinações entre número de unidades e ondas (ocasiões de medições) --  FORMATO LONGO
+
+*  Pacotes estatísticos podem ser utilizados para variar entre os formatos ... reshape...
+
+ 
+
+
+* Nível pessoa: 
+    * Pode ser usado para ser analisado visualmente (não aconselhável)
+          * Omite a variável tempo (tempo nas colunas)
+          * Pode ser ineficiente se o número de ondas for muito grande
+          * O que fazer quando não há espaços regulares entre as ondas?
+          * Como lidar com covariáveis que mudam com o tempo?
+          * Necessário para matriz de correlação
+* Pessoa-período:
+    * Deve conter (pelo menos) 4 variáveis:
+          * Identificador de pessoas/unidade
+          * Identificador do tempo 
+          * A variável resposta (muda com o tempo)
+          * A(s) variável(is) explicativa(s) (fixas ou que mudam com o tempo)
+          * É o formato que deve ser usado na análise exploratória 
+ 
+
+##  Objetivo
+
+* Dados de corte transversal: fotografia
+* Dados longitudinais: filme
+
+* Análise e medição do processo de mudança 
+    * Crescimento individual 
+        * Direção não importa necessariamente
+        * Pode ser o decréscimo 
+        * Ou trajetórias complexas
+        * Explorar e confirmar  
+
+> >  Como a variável resposta muda ao longo do tempo?
+
+> > Podemos prever diferenças nessas mudanças devido a outros fatores?
+
+ 
+
+##  Identificando relações longitudinais e de corte-transversal
+Exemplo: 
+* Y = proficiência em Leitura 
+* X = Idade
+
+
+   
+* Crianças mais velhas são piores em leitura
+* As crianças ficam piores em leitura conforme ficam mais velhas? Confusão!?!?
+
